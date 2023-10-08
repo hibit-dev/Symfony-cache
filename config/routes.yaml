@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+repository-cache:
+    path: /repository-cache
+    controller: App\Controller\RepositoryCacheController
+    methods: GET
