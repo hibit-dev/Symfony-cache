@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e077926b0d83c217ece524f4a3d61fa8",
+    "content-hash": "a4cc1c286924fad48c896d18c11a3239",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1386,6 +1386,59 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "hibit-dev/criteria",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hibit-dev/criteria.git",
+                "reference": "1700aa90ca75dcdde0e210acadd63b7004a36bbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hibit-dev/criteria/zipball/1700aa90ca75dcdde0e210acadd63b7004a36bbd",
+                "reference": "1700aa90ca75dcdde0e210acadd63b7004a36bbd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hibit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tigran Mekinyan",
+                    "email": "tmekinyan@mail.ru"
+                }
+            ],
+            "description": "A comprehensive package for managing criteria pattern in PHP projects, streamlining data filtering, sorting, and pagination with ease.",
+            "homepage": "https://www.hibit.dev",
+            "keywords": [
+                "IP",
+                "country",
+                "detection",
+                "geo",
+                "laravel",
+                "location",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/hibit-dev/criteria/issues",
+                "source": "https://github.com/hibit-dev/criteria/tree/v1.1.0"
+            },
+            "time": "2023-09-25T11:11:28+00:00"
         },
         {
             "name": "monolog/monolog",
