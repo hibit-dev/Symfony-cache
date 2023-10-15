@@ -24,6 +24,12 @@ services:
     # please note that last definitions always *replace* previous ones
 
     App\Repository\UserRepositoryInterface:
+        class: App\Repository\Cache\UserRepository
+        arguments:
+            - '@App\Repository\Redis\RedisClient'
+            - '@DatabaseUserRepository'
+
+    DatabaseUserRepository:
         class: App\Repository\Database\UserRepository
 
     App\Repository\Redis\RedisClient:

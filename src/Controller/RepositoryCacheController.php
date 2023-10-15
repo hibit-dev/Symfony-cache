@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Repository\Database\UserRepository;
+use App\Repository\UserRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 class RepositoryCacheController extends AbstractController
 {
-    public function __invoke(UserRepository $userRepository): Response
+    public function __invoke(UserRepositoryInterface $userRepository): Response
     {
         $user = $userRepository->getById(1);
 
