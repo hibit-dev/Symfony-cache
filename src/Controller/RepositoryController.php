@@ -6,7 +6,7 @@ use App\Repository\UserRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class RepositoryCacheController extends AbstractController
+class RepositoryController extends AbstractController
 {
     public function __invoke(UserRepositoryInterface $userRepository): Response
     {

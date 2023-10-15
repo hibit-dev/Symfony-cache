@@ -6,5 +6,5 @@ controllers:
 
 repository-cache:
     path: /repository-cache
-    controller: App\Controller\RepositoryCacheController
+    controller: App\Controller\RepositoryController
     methods: GET
