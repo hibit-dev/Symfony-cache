@@ -25,3 +25,8 @@ services:
 
     App\Repository\UserRepositoryInterface:
         class: App\Repository\Database\UserRepository
+
+    App\Repository\Redis\RedisClient:
+        arguments:
+            - '%env(REDIS_HOST)%'
+            - '%env(REDIS_PORT)%'
