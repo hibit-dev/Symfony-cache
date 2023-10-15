@@ -5,22 +5,23 @@ namespace App\Repository\Cache;
 use App\Repository\UserRepositoryInterface;
 use App\Repository\Redis\RedisClientInterface;
 
-use Symfony\Component\Cache\Adapter\RedisAdapter;
+use Symfony\Component\Cache\Adapter\RedisTagAwareAdapter;
 
 class UserRepository implements UserRepositoryInterface
 {
-    private RedisAdapter $cache;
+    private RedisTagAwareAdapter $cache;
     private UserRepositoryInterface $databaseRepository;
 
     const CACHE_PREFIX = 'user_';
     const CACHE_SECONDS_TTL = 10;
+    const CACHE_TAG = 'users';
 
     public function __construct(
         RedisClientInterface $redisClient,
         UserRepositoryInterface $databaseRepository,
     ) {
         // Init Redis adapter for cache
-        $this->cache = new RedisAdapter(
+        $this->cache = new RedisTagAwareAdapter(
             $redisClient->client(),
             self::CACHE_PREFIX,
             self::CACHE_SECONDS_TTL
@@ -41,7 +42,7 @@ class UserRepository implements UserRepositoryInterface
         $userFromDatabase = $this->databaseRepository->getById($userId);
 
         // Save cache for future requests
-        $userFromCache->set($userFromDatabase);
+        $userFromCache->set($userFromDatabase)->tag(self::CACHE_TAG);
         $this->cache->save($userFromCache);
 
         return $userFromDatabase;
